@@ -1,7 +1,11 @@
 package edu.escuelaing.arep.parcial;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.escuelaing.arep.logic.ListCalcs;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import spark.Request;
 import spark.Response;
 import static spark.Spark.*;
@@ -17,6 +21,7 @@ public class ServerParcial {
     public static Double list_Prom;
     public static Double list_Sum;
     public static LinkedList list_Order;
+    
 	
     public static void main(String[] args) { 
         setPort(4567);
@@ -85,12 +90,21 @@ public class ServerParcial {
         list_Prom = calculator.promedio(list_numbers);
         list_Sum = calculator.sumatoria(list_numbers);
         list_Order = calculator.bubbleSort(list_numbers);
+        ObjectMapper map = new ObjectMapper();
+            
+        try {
+            String json = map.writeValueAsString(list_Order);
+            System.out.println("Json"+" "
+                    +json);
+        } catch (JsonProcessingException ex) {
+            Logger.getLogger(ServerParcial.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         System.out.println("List of Numbers:");
         System.out.println("List: "+ list_numbers);
         System.out.println("Average: "+ list_Prom);
-        System.out.println("Ordered: "+ list_Order);
         System.out.println("Summation: "+ list_Sum);
+        System.out.println("Ordered: "+ list_Order);
         
         String resultsHTML = "<!DOCTYPE html>\n" +
 "<html>\n" +

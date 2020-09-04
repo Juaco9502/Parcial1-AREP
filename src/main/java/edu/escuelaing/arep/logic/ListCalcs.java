@@ -1,6 +1,7 @@
 package edu.escuelaing.arep.logic;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 
@@ -31,10 +32,6 @@ public class ListCalcs
             sum += (double) set.get(i);
         }     
         
-        //Convierte la sumatoria a solo dos cifras decimales
-        String decimalTemp = String.format("%.2f", sum);
-        sum = Double.parseDouble(decimalTemp);
-        
         return sum;
     }
     
@@ -47,19 +44,22 @@ public class ListCalcs
     }
     
     public static LinkedList bubbleSort(LinkedList<Double> set) {
+        Double[] nums = new Double[set.size()];
         for(int i=0;i<set.size();i++){
-            for(int j=0; j<i;j++){
-                if(set.get(j)>set.get(j+1)){
-                    Double may = set.get(j);
-                    Double men = set.get(j+1);
-                    set.add(j, men);
-                    set.add(j+1,may);
-                }
-                
-            }
+            nums[i]=set.get(i);
         }
-
-        return set;
+        int n = nums.length;
+        for (int i = 0; i < n-1; i++)
+            for (int j = 0; j < n-i-1; j++)
+                if (nums[j] > nums[j+1])
+                {
+                    double temp = nums[j];
+                    nums[j] = nums[j+1];
+                    nums[j+1] = temp;
+                }
+        LinkedList ll = new LinkedList(Arrays.asList(nums));
+        
+        return ll;
     }
     
     
@@ -74,6 +74,7 @@ public class ListCalcs
         
         return numbers;
     }
+    
     
     
 }
