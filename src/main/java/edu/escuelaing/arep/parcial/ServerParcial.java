@@ -16,7 +16,7 @@ public class ServerParcial {
     public static LinkedList list_numbers = new LinkedList();
     public static Double list_Prom;
     public static Double list_Sum;
-    public static Double list_Order;
+    public static LinkedList list_Order;
 	
     public static void main(String[] args) { 
         setPort(4567);
@@ -35,11 +35,11 @@ public class ServerParcial {
 "   </head>\n" +
 "	\n" +
 "   <body>\n" +
-"      <p><b>Calculos con Lista de Numeros</b></p>\n" +
+"      <p><b>Calculations with list of numbers</b></p>\n" +
 "      <h2>Numbers Operators Web App!</h2>\n" +
-"      <p>Aplicación Web para ordenar con BubbleSort, calcular promedio y sumatoria de una lista de numeros dados por el usuario.\n\n</p>\n" +
+"      <p>Web application to sort with Bubble Sort, calculate average and sum of a list of numbers given by the user.\n\n</p>\n" +
 "      <p>\n\nClick the next link to start entering your data:</p>\n" +             
-"      <a href = \"/calcdata\" target = \"_self\">Enter Your Data</a>\n" +                
+"      <a href = \"/calcdata\" target = \"_self\">Enter your Data</a>\n" +                
 "   </body>\n" +
 "	\n" +
 "</html>";
@@ -58,10 +58,10 @@ public class ServerParcial {
 "   </head>\n" +
 "	\n" +
 "   <body>\n" +
-"      <p><b>Calculos con Lista de Numeros</b></p>\n" +
-"      <h2>Ingrese su Lista de Numeros a la Aplicacion:</h2>\n" +
-"      <p>\n\nIngrese una lista de números que quiera calcular:</p>\n" +
-"      <p>***Recuerde ingresar los numeros separados por espacios en blanco y con \".\" puntos decimales en caso de requerirlo.</p>\n" +                
+"      <p><b>Calculations with list of numbers</b></p>\n" +
+"      <h2>Enter your list of numbers to the application:</h2>\n" +
+"      <p>\n\nEnter a list of numbers you want to calculate:</p>\n" +
+"      <p>***Remember to enter the numbers separated by blank spaces and with \\ \". \\\" decimal points if required.</p>\n" +                
 "       <form action=\"/results\">\n" +
 "           List of Numbers:<br>\n" +
 "           <input type=\"text\" placeholder=\"Separated by spaces\" name=\"inputData\" ><br>\n" +
@@ -112,7 +112,7 @@ public class ServerParcial {
 "   </head>\n" +
 "	\n" +
 "   <body>\n" +
-"      <p><b>Calculos con Lista de Numeros</b></p>\n" +
+"      <p><b>Calculations with List of Numbers</b></p>\n" +
 "       <h2>Results</h2>" +
 "       <p>BubbleSort,Average and Summation values</p>\n\n" +
          
@@ -120,7 +120,7 @@ public class ServerParcial {
 "       <table style=\"width:30%\">\n" +
 "           <tr>\n" +
 "               <th>Results</th>\n" +
-"               <th><b>List of Numbers</b></th> \n" +
+"               <th><b>Result</b></th> \n" +
 "           </tr>\n" +
 "           <tr>\n" +
 "               <td><b>Average</b></td>\n" +

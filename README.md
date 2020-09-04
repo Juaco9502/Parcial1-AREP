@@ -15,5 +15,5 @@
 https://parcial1-arep.herokuapp.com/index
 
 
-Made by:
+By:
 Juan Camilo Ortiz

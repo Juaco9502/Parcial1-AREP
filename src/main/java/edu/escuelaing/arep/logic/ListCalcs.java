@@ -31,7 +31,7 @@ public class ListCalcs
             sum += (double) set.get(i);
         }     
         
-        //Convierte el maximo a solo dos cifras decimales
+        //Convierte la sumatoria a solo dos cifras decimales
         String decimalTemp = String.format("%.2f", sum);
         sum = Double.parseDouble(decimalTemp);
         
@@ -46,11 +46,22 @@ public class ListCalcs
         return prom;
     }
     
-    public static double bubbleSort(LinkedList set) {
-        double list = 0.0;
+    public static LinkedList bubbleSort(LinkedList<Double> set) {
+        for(int i=0;i<set.size();i++){
+            for(int j=0; j<i;j++){
+                if(set.get(j)>set.get(j+1)){
+                    Double may = set.get(j);
+                    Double men = set.get(j+1);
+                    set.add(j, men);
+                    set.add(j+1,may);
+                }
+                
+            }
+        }
 
-        return list;
+        return set;
     }
+    
     
     
     public static LinkedList readInput(String set) {
